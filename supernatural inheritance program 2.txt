@@ -1,0 +1,23 @@
+using System;
+
+namespace MagicalInheritance
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+     Storm s = new Storm("wind", false, "Zul'rajas");
+      Console.WriteLine(s.Announce());  
+      Pupil p = new Pupil("Mezil-kree");  
+     Storm pupilMezil = p.CastWindStorm(); 
+     Console.WriteLine(pupilMezil.Announce()); 
+     Mage m = new Mage("Gul’dan");
+     Storm mageGul = m.CastRainStorm();
+     Console.WriteLine(mageGul.Announce());
+     Archmage a = new Archmage("Nielas Aran");
+     Storm archNielas = a.CastRainStorm();
+     Storm archAran = a.CastLightningStorm();
+     Console.WriteLine($"{archNielas.Announce()}\n{archAran.Announce()}");
+    }
+  }
+}
